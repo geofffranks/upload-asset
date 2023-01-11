@@ -9,8 +9,8 @@ fi
 
 WITH_SHA1=${INPUT_WITH_SHA1}
 UPLOAD_URL=$(jq .release.upload_url ${GITHUB_EVENT_PATH} | tr -d '"' | sed "s/{?name,label}//g")
-FILE_MIME_TYPE=$(file -b --mime-type ${FILE})
 UPLOAD_FILE=${INPUT_FILE}
+FILE_MIME_TYPE=$(file -b --mime-type ${INPUT_FILE})
 
 if ${WITH_SHA1}; then
     UPLOAD_SHA1_FILE="${UPLOAD_FILE}.sha1"
