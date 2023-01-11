@@ -1,6 +1,8 @@
 # Upload Asset Docker Action
 
-This action upload file to release asset.
+This action uploads a file as a release asset. Forked from [PeerXu/upload-asset](https://github.com/PeerXu/upload-asset),
+and removed logic around generating the asset names. OS + Arch, and version customizations can be done via
+matrix builds and/or other variables.
 
 ## Environments
 
@@ -14,26 +16,6 @@ This action upload file to release asset.
 
 **Required** upload file to release asset
 
-### `suffix`
-
-file suffix
-
-**Default** `.tar.gz`
-
-### `os`
-
-which operating system platform for file to execute
-
-### `arch`
-
-which architecture platform for file to execute
-
-### `with_tag`
-
-upload file to asset with tag version
-
-**Default** `true`
-
 ### `with_sha1`
 
 upload file to asset with hash in sha1 algorithm
@@ -42,13 +24,9 @@ upload file to asset with hash in sha1 algorithm
 
 ### Example usage
 
-    uses: PeerXu/upload-asset@v1
+    uses: gfranks/upload-asset@v1
     with:
-      file: path/to/binary.tar.gz
-      os: linux
-      arch: amd64
-      with_tag: true
+      file: path/to/asset
       with_sha1: true
-      suffix: .tar.gz
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

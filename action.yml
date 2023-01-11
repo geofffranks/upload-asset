@@ -4,18 +4,6 @@ inputs:
   file:
     description: which file to upload
     required: true
-  suffix:
-    description: file suffix
-    default: .tar.gz
-  os:
-    description: which operating system platform for file to execute
-    default: ""
-  arch:
-    description: which architecture platform for file to execute
-    default: ""
-  with_tag:
-    description: upload file to asset with tag version
-    default: true
   with_sha1:
     description: upload file to asset with hash in sha1 algorithm
     default: true
