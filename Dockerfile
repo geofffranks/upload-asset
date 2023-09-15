@@ -1,4 +1,4 @@
-FROM debian:9-slim
+FROM debian:stable-slim
 
 RUN apt update && apt install jq curl file -y
 
